@@ -390,3 +390,16 @@ def foo(*argumenty):
 
 foo()
 foo(1, 2)
+
+
+## OOP
+
+class <nazwa>:
+   ...
+
+class Person:  # klasa
+    pass
+
+person = Person()  # instancja, obiekt
+
+int("10")
