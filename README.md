@@ -298,3 +298,56 @@ zbior = {1, 2, 3, 4}
 **Operacje na zbiorach:** Mimo że bezpośredni dostęp do elementów jest niemożliwy, zbiory oferują bogaty zestaw operacji matematycznych takich jak unia, przecięcie, różnica symetryczna i różnica, które pozwalają na efektywną manipulację zbiorami.
 
 W zależności od typu kolekcji, Python oferuje różne mechanizmy dostępu i manipulacji danymi, co pozwala na elastyczne i efektywne programowanie.
+
+
+# PRACA Z PLIKAMI
+
+Praca z plikami w Pythonie jest kluczowym aspektem wielu programów, pozwalającym na odczyt, zapis i manipulację danymi przechowywanymi w plikach na dysku. Poniżej przedstawiam podstawowe operacje związane z pracą z plikami w Pythonie:
+
+1. **Otwieranie pliku**: Aby pracować z plikiem, najpierw musimy go otworzyć. Służy do tego wbudowana funkcja `open()`. Przyjmuje ona ścieżkę do pliku oraz tryb otwarcia. Na przykład:
+
+```python
+file = open("example.txt", "r")  # Otwarcie pliku do odczytu
+```
+
+2. **Tryby otwarcia pliku**: Python obsługuje różne tryby otwarcia pliku, takie jak:
+   - `"r"`: Odczyt - domyślny tryb, otwiera plik do odczytu.
+   - `"w"`: Zapis - otwiera plik do zapisu. Jeśli plik już istnieje, jego zawartość zostanie usunięta. Jeśli plik nie istnieje, zostanie utworzony.
+   - `"a"`: Dopisywanie - otwiera plik do dopisywania. Nowa zawartość jest dodawana na końcu pliku.
+   - `"r+"`: Odczyt i zapis - otwiera plik do odczytu i zapisu.
+   - `"b"`: Tryb binarny - otwiera plik w trybie binarnym, który jest używany do plików nie-tekstowych (np. obrazy, pliki dźwiękowe).
+
+3. **Odczyt i zapis danych**: Po otwarciu pliku możemy odczytywać jego zawartość lub zapisywać dane do niego. Do tego celu używamy metod takich jak `read()`, `readline()`, `readlines()` do odczytu, oraz `write()` do zapisu danych. Na przykład:
+
+```python
+# Odczyt całej zawartości pliku
+content = file.read()
+
+# Odczyt pojedynczej linii
+line = file.readline()
+
+# Odczyt wszystkich linii do listy
+lines = file.readlines()
+
+# Zapis danych do pliku
+file.write("Nowa zawartość.")
+```
+
+4. **Zamykanie pliku**: Po zakończeniu pracy z plikiem ważne jest jego zamknięcie, aby zwolnić zasoby systemowe. Służy do tego metoda `close()`:
+
+```python
+file.close()
+```
+
+5. **Blok `with`**: Blok `with` jest często używany w Pythonie do otwierania plików. Zapewnia on automatyczne zamknięcie pliku po opuszczeniu bloku, nawet jeśli wystąpi błąd podczas działania w bloku `with`. Jest to zalecana praktyka:
+
+```python
+with open("example.txt", "r") as file:
+    content = file.read()
+    print(content)
+# Tutaj plik zostanie automatycznie zamknięty
+```
+
+6. **Obsługa błędów**: Podczas pracy z plikami istnieje wiele czynników, które mogą spowodować błędy, takie jak brak pliku, brak dostępu do pliku itp. Dobrą praktyką jest obsługa tych błędów za pomocą instrukcji `try` i `except`.
+
+To podstawowe informacje dotyczące pracy z plikami w Pythonie. Praca z plikami jest niezbędna w wielu aplikacjach, szczególnie w operacjach na danych, jak czytanie plików z danymi wejściowymi, zapisywanie wyników, itp.
