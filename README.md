@@ -300,6 +300,12 @@ zbior = {1, 2, 3, 4}
 W zależności od typu kolekcji, Python oferuje różne mechanizmy dostępu i manipulacji danymi, co pozwala na elastyczne i efektywne programowanie.
 
 
+## wyrażenia listowe, słownikowe (comprehensions)
+
+
+
+
+
 # PRACA Z PLIKAMI
 
 Praca z plikami w Pythonie jest kluczowym aspektem wielu programów, pozwalającym na odczyt, zapis i manipulację danymi przechowywanymi w plikach na dysku. Poniżej przedstawiam podstawowe operacje związane z pracą z plikami w Pythonie:
@@ -351,3 +357,36 @@ with open("example.txt", "r") as file:
 6. **Obsługa błędów**: Podczas pracy z plikami istnieje wiele czynników, które mogą spowodować błędy, takie jak brak pliku, brak dostępu do pliku itp. Dobrą praktyką jest obsługa tych błędów za pomocą instrukcji `try` i `except`.
 
 To podstawowe informacje dotyczące pracy z plikami w Pythonie. Praca z plikami jest niezbędna w wielu aplikacjach, szczególnie w operacjach na danych, jak czytanie plików z danymi wejściowymi, zapisywanie wyników, itp.
+
+
+# Funkcje
+
+def nazwa():
+   cialo funkcji
+
+
+def nazwa(param, param2):
+   cialo funkcji
+
+
+def nazwa(param, param2="wartosc domyslna"):
+   cialo funkcji
+
+nazwa() 
+
+
+def sumator(a, b, *args):
+   args - tupla
+
+   pass
+
+sumator(1, 2)
+sumator(1, 2, 1, 2, 3)
+
+
+def foo(*argumenty):
+    ...
+
+
+foo()
+foo(1, 2)
