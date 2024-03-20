@@ -4,6 +4,16 @@
 
 - **Zdalne Repozytorium:** [GitHub - szkolenie_e](https://github.com/rkorzen/szkolenie_e)
 
+Aby pobrać materiały wejdź na powyższy link, kliknij zielony przycisk Code i wybierz opcję Download ZIP. Po pobraniu plików, rozpakuj archiwum i otwórz folder w dowolnym edytorze kodu.
+
+Możesz też użyć gita do sklonowania repozytorium na swój komputer. 
+By to zrobić musisz mieć zainstalowanego gita na swoim komputerze. 
+
+W terminalu wpisz:
+
+```bash
+git clone https://github.com/rkorzen/szkolenie_e.git 
+```
 
 ## Rys historyczny
 
@@ -359,53 +369,181 @@ with open("example.txt", "r") as file:
 To podstawowe informacje dotyczące pracy z plikami w Pythonie. Praca z plikami jest niezbędna w wielu aplikacjach, szczególnie w operacjach na danych, jak czytanie plików z danymi wejściowymi, zapisywanie wyników, itp.
 
 
+
 # Funkcje
 
-def nazwa():
-   cialo funkcji
+
+**Funkcje w Pythonie: Klucz do Efektywnego Kodowania**
+
+W świecie programowania, funkcje stanowią fundament tworzenia czytelnego, modułowego i efektywnego kodu. W języku Python, funkcje są wszechobecne i stanowią nieodłączny element programowania zarówno dla początkujących, jak i doświadczonych programistów. W tym artykule przyjrzymy się roli funkcji w Pythonie oraz ich istotnym cechom.
+
+**Czym są funkcje w Pythonie?**
+
+W Pythonie, funkcje są blokami kodu, które wykonują określone zadanie po wywołaniu. Mogą przyjmować argumenty, przetwarzać dane oraz zwracać wyniki. Definiowanie funkcji rozpoczyna się od słowa kluczowego `def`, po którym podaje się nazwę funkcji i ewentualne parametry.
+
+**Podstawowe cechy funkcji w Pythonie:**
+
+1. **Modularyzacja kodu:** Funkcje pozwalają na podział programu na mniejsze, bardziej zrozumiałe części. Dzięki temu kod staje się bardziej czytelny i łatwiejszy w utrzymaniu.
+
+2. **Parametry:** Funkcje mogą przyjmować zero lub więcej parametrów. Parametry mogą być obowiązkowe lub opcjonalne, a nawet mogą posiadać wartości domyślne.
+
+3. **Zasięg zmiennych:** Zmienne zdefiniowane wewnątrz funkcji mają zasięg lokalny i nie są dostępne poza nią, chyba że zostaną zadeklarowane jako globalne.
+
+4. **Zwracanie wartości:** Funkcje mogą zwracać wartość za pomocą słowa kluczowego `return`. W Pythonie funkcja może zwrócić jedną lub więcej wartości.
+
+5. **Rekurencja:** Python obsługuje rekurencyjne wywoływanie funkcji, co pozwala na eleganckie rozwiązanie wielu problemów, takich jak obliczanie silni czy przeszukiwanie drzew.
+
+**Przykład: Funkcja obliczająca silnię:**
+
+```python
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+result = factorial(5)
+print("Factorial of 5 is:", result)
+```
+
+W powyższym przykładzie funkcja `factorial` oblicza silnię liczby `n` za pomocą rekurencji.
 
 
-def nazwa(param, param2):
-   cialo funkcji
+**1. Funkcja przyjmująca parametry pozycyjne:**
 
+Parametry pozycyjne są najbardziej podstawowym rodzajem parametrów funkcji. Ich wartości są przypisywane na podstawie kolejności, w jakiej są przekazywane podczas wywoływania funkcji.
 
-def nazwa(param, param2="wartosc domyslna"):
-   cialo funkcji
+```python
+def greet(name, age):
+    print(f"Hello {name}! You are {age} years old.")
 
-nazwa() 
+greet("Alice", 30)
+```
 
+W tym przykładzie `name` i `age` są parametrami pozycyjnymi. Przekazując wartości `"Alice"` i `30` podczas wywoływania funkcji `greet`, przypisywane są one odpowiednio do parametrów `name` i `age`.
 
-def sumator(a, b, *args):
-   args - tupla
+**2. Funkcja przyjmująca parametry nazwane:**
 
-   pass
+Parametry nazwane (keyword arguments) są przypisywane na podstawie ich nazw podanych podczas wywoływania funkcji.
 
-sumator(1, 2)
-sumator(1, 2, 1, 2, 3)
+```python
+def greet(name, age):
+    print(f"Hello {name}! You are {age} years old.")
 
+greet(age=30, name="Bob")
+```
 
-def foo(*argumenty):
-    ...
+W tym przykładzie argumenty są przekazywane z nazwami `age` i `name`, co pozwala na dowolną kolejność podawania argumentów.
 
+**3. Funkcja przyjmująca *args:**
 
-foo()
-foo(1, 2)
+`*args` pozwala funkcji przyjmować dowolną liczbę pozycyjnych argumentów. Argumenty te są przekazywane do funkcji jako krotka (tuple).
 
+```python
+def sum_all(*args):
+    total = 0
+    for num in args:
+        total += num
+    return total
+
+result = sum_all(1, 2, 3, 4, 5)
+print("Sum:", result)
+```
+
+W tym przykładzie funkcja `sum_all` może przyjąć dowolną liczbę argumentów pozycyjnych. Przekazane argumenty są zsumowane, niezależnie od ich liczby.
+
+**4. Funkcja przyjmująca **kwargs:**
+
+`**kwargs` pozwala funkcji przyjmować dowolną liczbę nazwanych argumentów. Argumenty te są przekazywane do funkcji jako słownik (dict).
+
+```python
+def print_info(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+print_info(name="Alice", age=30, city="New York")
+```
+
+W tym przykładzie funkcja `print_info` przyjmuje nazwane argumenty i wypisuje je w formie klucz-wartość. Dzięki temu możemy przekazać funkcji różne parametry w postaci nazwanych argumentów.
 
 ## OOP
 
-class <nazwa>:
-   ...
+**Klasy w Pythonie: Budowanie Struktur i Hierarchii Obiektów**
 
-class Person:  # klasa
-    pass
+W świecie programowania obiektowego, klasy są kluczowym elementem, który umożliwia tworzenie struktur danych oraz hierarchii obiektów. W języku Python, koncepcja klas jest niezwykle ważna i elastyczna, pozwalając programistom na tworzenie zarówno prostych, jak i złożonych systemów.
 
-person = Person()  # instancja, obiekt
+**Definiowanie Klas:**
 
-int("10")
+Klasy w Pythonie definiuje się przy użyciu słowa kluczowego `class`, po którym podaje się nazwę klasy. Klasa może zawierać atrybuty klasowe oraz metody.
+
+```python
+class Car:
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+
+    def display_info(self):
+        print(f"Car: {self.make} {self.model}")
+```
+
+W powyższym przykładzie definiujemy klasę `Car`, która ma atrybuty `make` i `model`, oraz metodę `display_info`, która wyświetla informacje o samochodzie.
+
+**Atrybuty Klasowe i Atrybuty Instancji:**
+
+Atrybuty klasy są wspólne dla wszystkich instancji danej klasy, podczas gdy atrybuty instancji są unikatowe dla każdej instancji.
+
+```python
+class Car:
+    wheels = 4  # Atrybut klasowy
+
+    def __init__(self, make, model):
+        self.make = make  # Atrybut instancji
+        self.model = model  # Atrybut instancji
+```
+
+W tym przykładzie `wheels` jest atrybutem klasowym, który jest wspólny dla wszystkich samochodów, natomiast `make` i `model` są atrybutami instancji, które mogą się różnić dla każdego samochodu.
+
+**Proste Dziedziczenie:**
+
+Dziedziczenie umożliwia tworzenie nowych klas na podstawie istniejących klas. Klasa dziedzicząca (potomna) dziedziczy atrybuty i metody klasy nadrzędnej (bazowej).
+
+```python
+class ElectricCar(Car):  # Dziedziczenie
+    def __init__(self, make, model, battery_capacity):
+        super().__init__(make, model)
+        self.battery_capacity = battery_capacity
+
+    def display_info(self):  # Przeciążanie metody
+        print(f"Electric Car: {self.make} {self.model}, Battery: {self.battery_capacity} kWh")
+```
+
+W tym przykładzie klasa `ElectricCar` dziedziczy po klasie `Car`, a metoda `display_info` została przeciążona, aby uwzględnić informacje o pojemności baterii dla samochodu elektrycznego.
+
+**Proste Przeciążanie Operatorów:**
+
+Przeciążanie operatorów umożliwia definiowanie własnych zachowań dla operatorów Pythona w ramach naszych klas.
+
+```python
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):  # Przeciążanie operatora dodawania
+        return Point(self.x + other.x, self.y + other.y)
+
+point1 = Point(1, 2)
+point2 = Point(3, 4)
+result = point1 + point2
+print("Result:", result.x, result.y)
+```
+
+W powyższym przykładzie operator dodawania `+` został przeciążony dla klasy `Point`, co pozwala na dodawanie dwóch punktów, zwracając nowy punkt o współrzędnych będących sumą współrzędnych punktów dodawanych.
 
 
-## wersja wykonywalna pliku
+## Wersja wykonywalna pliku
+
+```bash
 python -m venv venv
 venv\Scripts\activate
 
@@ -414,20 +552,87 @@ pip install pyinstaller
 pyinstaller --onefile <nazwa pliku>
 
 py -3.12 -m pip install pyinstaller 
-
+```
 
 ## PEP 8
 
-https://peps.python.org/pep-0008/
+PEP 8 to oficjalny zbiór zaleceń dotyczących stylu kodowania w języku Python. Można go znaleźć pod adresem [https://peps.python.org/pep-0008/](https://peps.python.org/pep-0008/).
 
-flake8 - sprawdzanie
-black - formatowanie
+**PEP 8: Podstawowe Zasady Stylu Kodowania w Pythonie**
 
+PEP 8 to oficjalny dokument zawierający zalecenia dotyczące stylu kodowania w języku Python. Opracowany przez autora samego Pythona, Guido van Rossuma, oraz Barry'ego Warsaw, PEP 8 jest podstawowym punktem odniesienia dla programistów Pythona w kwestii tworzenia czytelnego, konsekwentnego i łatwego w utrzymaniu kodu.
+
+**Dlaczego PEP 8 jest ważny?**
+
+Konsekwentne stosowanie zasad PEP 8 przynosi wiele korzyści dla projektów Pythonowych:
+
+1. **Czytelność kodu:** Stosowanie spójnego stylu kodowania ułatwia czytanie i zrozumienie kodu, zarówno dla programistów, którzy go piszą, jak i dla osób pracujących nad nim w przyszłości.
+
+2. **Łatwiejsze utrzymanie:** Konsekwentny styl kodowania ułatwia debugowanie, testowanie i wprowadzanie zmian w kodzie, co przyczynia się do jego długoterminowej trwałości.
+
+3. **Łatwiejsza współpraca:** Przestrzeganie zasad PEP 8 ułatwia współpracę z innymi programistami, ponieważ wszyscy stosują te same zasady formatowania.
+
+**Podstawowe Zasady PEP 8:**
+
+1. **Wcięcia:** Używaj wcięć o długości czterech spacji, unikaj tabulatorów.
+
+2. **Spacje vs. Tabulatory:** Unikaj mieszania spacji i tabulatorów do tworzenia wcięć. Stosuj spacje jako preferowany sposób wcięcia.
+
+3. **Długość linii:** Linie kodu nie powinny być dłuższe niż 79 znaków. Długie instrukcje można podzielić za pomocą linii kontynuacji lub podziału logicznego.
+
+4. **Nazewnictwo:** Używaj zrozumiałego i konsekwentnego nazewnictwa dla zmiennych, funkcji, klas i modułów. Stosuj snake_case dla nazw zmiennych i funkcji, oraz CamelCase dla nazw klas.
+
+5. **Importy:** Importy powinny być grupowane w następującej kolejności: standardowe moduły biblioteki Pythona, moduły zainstalowane przez użytkownika, lokalne moduły. Importy powinny być umieszczone na początku pliku.
+
+6. **Puste linie:** Dodawaj puste linie w celu rozdzielenia logicznych bloków kodu wewnątrz funkcji, metod oraz na końcu plików.
+
+7. **Komentarze:** Dodawaj komentarze, które wyjaśniają skomplikowane fragmenty kodu lub jego intencje. Komentarze powinny być jasne i zwięzłe.
+
+PEP 8 to więcej niż zbiór zasad formatowania kodu. Jest to wyraz dojrzałości społeczności Pythona, która docenia czytelność, klarowność i współpracę. Stosowanie zasad PEP 8 to nie tylko dobry nawyk, ale także sposób na tworzenie lepszego oprogramowania w środowisku Pythona.
+
+### Narzędzia
+
+```bash
 pip install flake8
 pip install black
 
 flake8 <nazwa pliku>
 flake8 
 
+black <nazwa pliku>
+black .
+```
 
-https://docs.sqlalchemy.org/en/20/
+**Flake8 i Black: Narzędzia do Wspierania Zgodności z PEP 8**
+
+Flake8 i Black są dwoma popularnymi narzędziami w świecie Pythona, które pomagają programistom utrzymywać zgodność z zasadami PEP 8 oraz poprawiają jakość kodu poprzez automatyczne sprawdzanie i formatowanie.
+
+**Flake8:**
+
+Flake8 jest narzędziem do statycznego sprawdzania kodu w języku Python. Integruje kilka narzędzi sprawdzających, w tym pyflakes, pycodestyle (wcześniej znany jako pep8) oraz McCabe, umożliwiając kompleksowe analizowanie kodu pod kątem zgodności z PEP 8 oraz znajdowanie potencjalnych błędów i problemów w kodzie.
+
+Korzyści z korzystania z Flake8 obejmują:
+
+- Automatyczne sprawdzanie kodu pod kątem zgodności z PEP 8.
+- Wykrywanie potencjalnych błędów i problemów w kodzie.
+- Integracja z wieloma edytorami kodu i narzędziami do zarządzania kodem źródłowym.
+
+**Black:**
+
+Black to narzędzie do automatycznego formatowania kodu w języku Python. Jego celem jest zapewnienie spójnego i zgodnego z zasadami PEP 8 formatowania kodu poprzez automatyczne stosowanie odpowiednich wcięć, odstępów, linii pustych itp. Black działa jako narzędzie wiersza poleceń oraz jako wtyczka dla wielu popularnych edytorów kodu.
+
+Korzyści z korzystania z Black obejmują:
+
+- Automatyczne formatowanie kodu, co eliminuje potrzebę ręcznego dbania o jego spójność i zgodność z PEP 8.
+- Umożliwia skupienie się na samej logice i funkcjonalności kodu, zamiast martwienia się o jego formatowanie.
+- Zapewnia spójny styl kodowania w całym projekcie, niezależnie od liczby autorów i edytorów.
+
+W skrócie, zarówno Flake8, jak i Black są potężnymi narzędziami, które pomagają programistom utrzymywać wysoką jakość kodu oraz zgodność z zasadami PEP 8. Flake8 pomaga w statycznym sprawdzaniu kodu, podczas gdy Black automatycznie formatuje kod, co pozwala programistom skupić się na samej logice i funkcjonalności kodu. Dzięki nim utrzymanie czystego, czytelnego i zgodnego z zasadami PEP 8 kodu staje się prostsze i bardziej efektywne.
+
+## Dokumentacja SQLAlchemy
+
+Dokumentacja SQLAlchemy dostępna jest pod adresem [https://docs.sqlalchemy.org/en/20/](https://docs.sqlalchemy.org/en/20/).
+
+## Materiały dodatkowe:
+
+[tutaj](materiały dodatkowe)
