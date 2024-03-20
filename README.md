@@ -635,4 +635,4 @@ Dokumentacja SQLAlchemy dostępna jest pod adresem [https://docs.sqlalchemy.org/
 
 ## Materiały dodatkowe:
 
-[tutaj](materiały dodatkowe)
+[tutaj](materialydodatkowe.md)
