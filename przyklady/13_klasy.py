@@ -75,8 +75,5 @@ print(kw.obwod)
 
 kw.obwod = 120
 print(kw.bok)
-
 print(kw > kw2)
-
-
 print(kw + kw2)

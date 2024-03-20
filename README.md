@@ -403,3 +403,28 @@ class Person:  # klasa
 person = Person()  # instancja, obiekt
 
 int("10")
+
+
+## wersja wykonywalna pliku
+python -m venv venv
+venv\Scripts\activate
+
+pip install pyinstaller
+
+pyinstaller --onefile <nazwa pliku>
+
+py -3.12 -m pip install pyinstaller 
+
+
+## PEP 8
+
+https://peps.python.org/pep-0008/
+
+flake8 - sprawdzanie
+black - formatowanie
+
+pip install flake8
+pip install black
+
+flake8 <nazwa pliku>
+flake8 
