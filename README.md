@@ -428,3 +428,6 @@ pip install black
 
 flake8 <nazwa pliku>
 flake8 
+
+
+https://docs.sqlalchemy.org/en/20/
